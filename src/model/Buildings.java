@@ -25,9 +25,11 @@ public class Buildings {
     public void sortToOffices(ArrayList <Person> personArrayList){
         for(int i=0;i<personArrayList.size();i++) {
             int floor2Go = which_Floor(personArrayList.get(i).getDesiredOffice());
-            if(buildingHm.get(floor2Go)!=0){
-                personArrayList.get(i).setOnOffice(true);
-                buildingHm.put(floor2Go, buildingHm.get(floor2Go)-1);
+            if(floor2Go!=0) {
+                if (buildingHm.get(floor2Go) != 0 ) {
+                    personArrayList.get(i).setOnOffice(true);
+                    buildingHm.put(floor2Go, buildingHm.get(floor2Go) - 1);
+                }
             }
         }
 
@@ -44,5 +46,9 @@ public class Buildings {
             return whole;
         }
         return 0;
+    }
+
+    public String getBuildingName() {
+        return buildingName;
     }
 }
