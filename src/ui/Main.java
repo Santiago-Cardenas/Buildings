@@ -79,7 +79,6 @@ public class Main {
             int desiredOffice = Integer.parseInt(arrOfStr[2]);
             Person person = new Person(name, currentFloor, desiredOffice, false);
             peopleInBuilding.add(person);
-            sc.nextLine();
         }
         buildings.sortToOffices(peopleInBuilding);
         msg(peopleInBuilding);
